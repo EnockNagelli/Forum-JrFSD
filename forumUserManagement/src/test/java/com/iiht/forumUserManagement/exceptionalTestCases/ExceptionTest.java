@@ -39,7 +39,7 @@ public class ExceptionTest {
 	private RegisterUserServiceImpl registerUserServiceImpl;
 	
 	@Test
-	public void testAddGiftOrderException() throws Exception {
+	public void testAddUserException() throws Exception {
 
 		RegisterUserDto userData = MasterData.getRegisterUserDetails();
 		userData.setMobileNo(123);
@@ -56,7 +56,7 @@ public class ExceptionTest {
 	}
 
 	@Test
-	public void testDeleteGiftCardException() throws Exception {
+	public void testDeleteUserException() throws Exception {
 
 		when(registerUserServiceImpl.deleteUser("1")).thenReturn(true);
 
