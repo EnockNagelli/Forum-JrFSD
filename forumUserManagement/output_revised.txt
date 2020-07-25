@@ -1,0 +1,6 @@
+
+testDeleteUsers=true
+testViewAllUsers=true
+testUpdateUsers=false
+testAddRegisterUser=true
+testLoginCredentials=false
