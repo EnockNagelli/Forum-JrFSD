@@ -1,0 +1,381 @@
+<test-cases>
+<!-- Exceptional Test Cases --------------------------------------------------------------------------------------------- -->
+	<!-- User Management : ExceptionTest ----------------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddUserException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteUserException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Admin : ExceptionTest --------------------------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddCategoryException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteCategoryException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Post : ExceptionTest ------------------------------------------------ -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddPostException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeletePostException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Comment : ExceptionTest --------------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddCommentException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteCommentException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Like : ExceptionTest ------------------------------------------------ -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddLikeException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Exception</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteLikeException</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+
+<!-- Boundary Test Cases--------------------------------------------------------------------------------------------- -->
+	<!-- User Management : TestEntityValidation ---------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testRegisterUserSuccess</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testUserFirstNameLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testLoginNameLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testUserMobileNo</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testUserEmail</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Admin : TestEntityValidation -------------------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testCategorySuccess</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAdminNameLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testCategoryLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Post : TestEntityValidation ----------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testVisitorPostSuccess</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testCategoryLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testPostTitleLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testPostTagsLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Comment : TestEntityValidation -------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testVisitorCommentSuccess</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testCommentTagsLength</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Like : TestEntityValidation ----------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Boundary</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testVisitorLikeSuccess</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+<!-- Funcational Test Cases --------------------------------------------------------------------------------------------- -->
+	<!-- User Management : TestRegisterUserController ---------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddRegisterUser</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testLoginCredentials</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testViewAllUsers</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteUsers</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testUpdateUsers</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Admin : TestAdminController --------------------------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddCategory</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testViewAllCategories</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteCategory</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Post : TestVisitorPostController ------------------------------------ -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddVisitorPost</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testViewAllPosts</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeletePost</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testVisitorPostById</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Comment : TestVisitorCommentController ------------------------------ -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddComment</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testViewAllComments</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteComment</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testVisitorCommentById</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<!-- Visitor - Like : TestVisitorCommentController --------------------------------- -->
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testAddLike</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testViewAllLikes</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testDeleteLike</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
+		<test-case-type>Functional</test-case-type>
+		<expected-ouput>true</expected-ouput>
+		<name>testVisitorLikeById</name>
+		<weight>2</weight>
+		<mandatory>true</mandatory>
+		<desc>na</desc>
+	</cases>
+</test-cases>
