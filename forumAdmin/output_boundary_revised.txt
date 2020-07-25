@@ -1,0 +1,4 @@
+
+testCategoryLength=true
+testAdminNameLength=true
+testCategorySuccess=true
