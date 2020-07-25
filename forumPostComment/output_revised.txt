@@ -1,0 +1,5 @@
+
+testViewAllLikes=true
+testAddLike=true
+testVisitorLikeById=false
+testDeleteLike=true
