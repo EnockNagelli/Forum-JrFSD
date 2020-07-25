@@ -1,6 +1,4 @@
 <test-cases>
-<!-- Exceptional Test Cases --------------------------------------------------------------------------------------------- -->
-	<!-- User Management : ExceptionTest ----------------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Exception</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -17,7 +15,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Admin : ExceptionTest --------------------------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Exception</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -34,7 +31,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Post : ExceptionTest ------------------------------------------------ -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Exception</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -51,7 +47,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Comment : ExceptionTest --------------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Exception</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -68,7 +63,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Like : ExceptionTest ------------------------------------------------ -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Exception</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -85,9 +79,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-
-<!-- Boundary Test Cases--------------------------------------------------------------------------------------------- -->
-	<!-- User Management : TestEntityValidation ---------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Boundary</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -128,7 +119,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Admin : TestEntityValidation -------------------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Boundary</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -153,7 +143,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Post : TestEntityValidation ----------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Boundary</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -186,7 +175,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Comment : TestEntityValidation -------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Boundary</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -203,7 +191,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Like : TestEntityValidation ----------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Boundary</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -212,8 +199,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-<!-- Funcational Test Cases --------------------------------------------------------------------------------------------- -->
-	<!-- User Management : TestRegisterUserController ---------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Functional</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -254,7 +239,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Admin : TestAdminController --------------------------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Functional</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -279,7 +263,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Post : TestVisitorPostController ------------------------------------ -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Functional</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -312,7 +295,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Comment : TestVisitorCommentController ------------------------------ -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Functional</test-case-type>
 		<expected-ouput>true</expected-ouput>
@@ -345,7 +327,6 @@
 		<mandatory>true</mandatory>
 		<desc>na</desc>
 	</cases>
-	<!-- Visitor - Like : TestVisitorCommentController --------------------------------- -->
 	<cases xmlns:java="http://java.sun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:com.assessment.data.TestCase">
 		<test-case-type>Functional</test-case-type>
 		<expected-ouput>true</expected-ouput>
