@@ -22,7 +22,7 @@ public class CommentServiceImpl implements CommentService {
 		return visitorCommentDao.deleteVisitorComment(commentId);
 	};
 	//----------------------------------------------------------------------------------
-	public VisitorCommentDto getVisitorCommentById(String postId) {
+	public List<VisitorCommentDto> getVisitorCommentById(String postId) {
 		return visitorCommentDao.getVisitorCommentById(postId);
 	}
 	//----------------------------------------------------------------------------------

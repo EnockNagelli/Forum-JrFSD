@@ -17,17 +17,20 @@ import com.iiht.forumAdmin.dto.CategoryDto;
 import com.iiht.forumAdmin.service.CategoryService;
 
 @RestController
-public class AdminController 														// PORT: 8091
+public class AdminController 																	// PORT: 8091
 {
 	@Autowired
 	private CategoryService categoryService;
-	//-------------------------------------------------------------------------------------------
-	@RequestMapping (value = "/")													// 1. WORKING
+
+	//-------------------------------------------------------------------------------------------------------
+	// SERVICE OPERATIONS
+	//-------------------------------------------------------------------------------------------------------
+	@RequestMapping (value = "/")																// 1. WORKING
  	public String home () {
  		return "Forum Admin application";
  	}
-	//-------------------------------------------------------------------------------------------
-	@PostMapping(value="/postCategory")												// 2. WORKING	
+	//-------------------------------------------------------------------------------------------------------
+	@PostMapping(value="/postCategory")															// 2. WORKING	
 	public ResponseEntity<Boolean> saveUpdate(@RequestBody CategoryDto categoryDto) {
 		Boolean value = categoryService.addCategory(categoryDto);
 		if (value) {
@@ -35,8 +38,8 @@ public class AdminController 														// PORT: 8091
 		}
 		return new ResponseEntity<Boolean>(value, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	//-------------------------------------------------------------------------------------------
-	@DeleteMapping(value = "/deleteCategory/{id}")									// 3. WORKING
+	//-------------------------------------------------------------------------------------------------------
+	@DeleteMapping(value = "/deleteCategory/{id}")												// 3. WORKING
 	public ResponseEntity<Boolean> deleteCategory(@PathVariable String id) {
 		Boolean value = categoryService.deleteCategory(id);
 		if (value) {
@@ -44,14 +47,22 @@ public class AdminController 														// PORT: 8091
 		}
 		return new ResponseEntity<Boolean>(value, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	//-------------------------------------------------------------------------------------------
-	@GetMapping(value = "/getCategoryById/{categoryId}")							// 4. WORKING
-	public ResponseEntity<CategoryDto> getCommentById(@PathVariable String categoryId) {
+	//-------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/getCategoryById/{categoryId}")										// 4. WORKING
+	public ResponseEntity<CategoryDto> getCategoryById(@PathVariable String categoryId) {
 		return new ResponseEntity<CategoryDto>(categoryService.getCategoryById(categoryId), HttpStatus.OK);
 	}
-	//-------------------------------------------------------------------------------------------
-	@GetMapping(value = "/getAllCategories", produces = "application/json")			// 5. WORKING
+	//-------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/getAllCategories", produces = "application/json")						// 5. WORKING
 	public ResponseEntity<List<CategoryDto>> getAllCategories() {
 		return new ResponseEntity<List<CategoryDto>>(categoryService.getAllCategories(), HttpStatus.OK);
+	}
+	
+	//-------------------------------------------------------------------------------------------------------
+	// SEARCH OPERATIONS
+	//-------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/category/{categoryId}", produces = "application/json")			// 1. WORKING
+	public ResponseEntity<CategoryDto> searchCategoryById(@PathVariable String categoryId) {
+		return new ResponseEntity<CategoryDto>(categoryService.getCategoryById(categoryId), HttpStatus.OK);
 	}	
 }

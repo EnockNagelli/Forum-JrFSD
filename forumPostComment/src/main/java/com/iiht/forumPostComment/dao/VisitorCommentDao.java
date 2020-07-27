@@ -7,6 +7,6 @@ import com.iiht.forumPostComment.dto.VisitorCommentDto;
 public interface VisitorCommentDao {
 	public Boolean saveUpdate(VisitorCommentDto commentInput);
 	public Boolean deleteVisitorComment(String commentId);
-	public VisitorCommentDto getVisitorCommentById(String postId);
+	public List<VisitorCommentDto> getVisitorCommentById(String postId);
 	public List<VisitorCommentDto> getAllVisitorComments();
 }

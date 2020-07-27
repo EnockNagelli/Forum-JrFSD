@@ -1,6 +1,7 @@
 package com.iiht.forumPostComment.dao;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 //import org.modelmapper.ModelMapper;
@@ -39,7 +40,8 @@ public class VisitorPostDaoImpl implements VisitorPostDao
 	};
 	//--------------------------------------------------------------------------------
 	public VisitorPostDto getPostById(String postId) {
-		return getVisitorPost(repository.findPostById(postId));
+		Optional<VisitorPosts> list = repository.findById(postId);
+		return getVisitorPost(list.get());
 	}
 	//--------------------------------------------------------------------------------
 	public List<VisitorPostDto> getAllPosts() {
@@ -50,6 +52,48 @@ public class VisitorPostDaoImpl implements VisitorPostDao
 		else
 			return posts.stream().map(this::getVisitorPostDto).collect(Collectors.toList());
 	}
+
+	// SEARCH OPERATIONS
+	//--------------------------------------------------------------------------------
+	// Search by CATEGORY
+	//--------------------------------------------------------------------------------
+	public List<VisitorPostDto> getAllPostsByCategory(String category)
+	{
+		List<VisitorPosts> posts = repository.findPostsByCategory(category);
+		
+		if(CollectionUtils.isEmpty(posts))
+			return null;
+		else
+			return posts.stream().map(this::getVisitorPostDto).collect(Collectors.toList());
+		
+	};
+	//--------------------------------------------------------------------------------
+	// Search by TITLE
+	//--------------------------------------------------------------------------------
+	public List<VisitorPostDto> getAllPostsByTitle(String title){
+
+		List<VisitorPosts> posts = repository.findPostsByTitle(title);
+		
+		if(CollectionUtils.isEmpty(posts))
+			return null;
+		else
+			return posts.stream().map(this::getVisitorPostDto).collect(Collectors.toList());
+	};
+	//--------------------------------------------------------------------------------
+	// Search by TAGS
+	//--------------------------------------------------------------------------------
+	public List<VisitorPostDto> getAllPostsByTag(String tag){
+
+		List<VisitorPosts> posts = repository.findPostsByTags(tag);
+		
+		if(CollectionUtils.isEmpty(posts))
+			return null;
+		else
+			return posts.stream().map(this::getVisitorPostDto).collect(Collectors.toList());
+	};
+
+	//--------------------------------------------------------------------------------
+	// Conversion Support Operations
 	//--------------------------------------------------------------------------------
 	public VisitorPostDto getVisitorPost(VisitorPosts posts) {
 		return new VisitorPostDto(posts.getId(), posts.getCategory(), posts.getTitle(), posts.getTags(), posts.getPostInfo());

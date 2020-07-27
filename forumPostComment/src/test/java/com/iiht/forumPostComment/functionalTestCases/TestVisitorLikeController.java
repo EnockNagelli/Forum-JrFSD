@@ -97,8 +97,12 @@ public class TestVisitorLikeController {
 	//------ Test 4 ------------------------------------------------------------------------------
 	@Test
 	public void testVisitorLikeById() throws Exception{
+
+		List<VisitorLikeDto> list = new ArrayList<VisitorLikeDto>();
 		
-		when(likeServiceImpl.getVisitorLikeByPostId("1")).thenReturn(MasterData.getVisitorLikeDetails());
+		list.add(MasterData.getVisitorLikeDetails());
+		
+		when(likeServiceImpl.getVisitorLikeByPostId("1")).thenReturn(list);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.put("/getLikeByPostId/1")
 				.content(MasterData.asJsonString(MasterData.getVisitorLikeDetails()))

@@ -35,17 +35,19 @@ public class VisitorCommentDaoImpl implements VisitorCommentDao
 		return true;
 	};
 	//-------------------------------------------------------------------------------------
-	public VisitorCommentDto getVisitorCommentById(String postId) {
+	public List<VisitorCommentDto> getVisitorCommentById(String postId) {
 		
-		VisitorComments comments = repository.findCommentByPostId(postId);
+		List<VisitorComments> comments = repository.findCommentByPostId(postId);
 
-		//VisitorCommentDto visitorCommentDto = getVisitorCommentDto(comments);
-		//return visitorCommentDto;
+		if(CollectionUtils.isEmpty(comments))
+			return null;
+		else
+			return comments.stream().map(this::getVisitorCommentDto).collect(Collectors.toList());
 
-		return getVisitorCommentDto(comments);
 	};
 	//-------------------------------------------------------------------------------------
 	public List<VisitorCommentDto> getAllVisitorComments(){
+
 		List<VisitorComments> posts = repository.findAll();
 		
 		if(CollectionUtils.isEmpty(posts))
@@ -58,13 +60,3 @@ public class VisitorCommentDaoImpl implements VisitorCommentDao
 		return new VisitorCommentDto(comments.getId(), comments.getPostId(), comments.getTags(), comments.getCommentInfo());
 	};	
 }
-
-
-
-
-
-
-
-//@Autowired
-//private ModelMapper modelMapper;
-//repository.save(modelMapper.map(commentInput, VisitorComments.class));

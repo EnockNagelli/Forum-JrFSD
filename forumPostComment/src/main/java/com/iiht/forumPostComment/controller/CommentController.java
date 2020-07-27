@@ -30,7 +30,7 @@ public class CommentController													// PORT: 8092
 		return new ResponseEntity<Boolean>(value, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	//---------------------------------------------------------------------------------------
-	@DeleteMapping(value = "/deleteComment/{commentId}")						// 3. WORKING
+	@DeleteMapping(value = "/deleteComment/{commentId}")						// 2. WORKING
 	public ResponseEntity<Boolean> deleteVisitorComment(@PathVariable String commentId) {
 		Boolean value = commentService.deleteComment(commentId);
 		if (value) {
@@ -39,13 +39,21 @@ public class CommentController													// PORT: 8092
 		return new ResponseEntity<Boolean>(value, HttpStatus.INTERNAL_SERVER_ERROR);
 	}	
 	//---------------------------------------------------------------------------------------
-	@GetMapping(value = "/getCommentByPostId/{postId}")							// 2. WORKING
-	public ResponseEntity<VisitorCommentDto> getCommentById(@PathVariable String postId) {
-		return new ResponseEntity<VisitorCommentDto>(commentService.getVisitorCommentById(postId), HttpStatus.OK);
+	@GetMapping(value = "/getCommentByPostId/{postId}")							// 3. WORKING
+	public ResponseEntity<List<VisitorCommentDto>> getCommentById(@PathVariable String postId) {
+		return new ResponseEntity<List<VisitorCommentDto>>(commentService.getVisitorCommentById(postId), HttpStatus.OK);
 	}
 	//---------------------------------------------------------------------------------------
-	@GetMapping(value = "/getAllComments", produces = "application/json")		// 3. WORKING
+	@GetMapping(value = "/getAllComments", produces = "application/json")		// 4. WORKING
 	public ResponseEntity<List<VisitorCommentDto>> getAllVisitorComments() {
 		return new ResponseEntity<List<VisitorCommentDto>>(commentService.getAllComments(), HttpStatus.OK);
+	}
+
+	//------------------------------------------------------------------------------------------
+	// SEARCH OPERATIONS
+	//------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/comment/{postId}")						    // SEARCH 1. WORKING
+	public ResponseEntity<List<VisitorCommentDto>> searchCommentByPostId(@PathVariable String postId) {
+		return new ResponseEntity<List<VisitorCommentDto>>(commentService.getVisitorCommentById(postId), HttpStatus.OK);
 	}
 }

@@ -24,6 +24,9 @@ public class PostController 												// PORT: 8092
 {	
 	@Autowired
 	private PostService postService;
+
+	//-----------------------------------------------------------------------------------
+	// SERVICE OPERATIONS
 	//-----------------------------------------------------------------------------------
 	@RequestMapping (value = "/")											// 1. WORKING
  	public String home () {
@@ -39,7 +42,7 @@ public class PostController 												// PORT: 8092
 		return new ResponseEntity<Boolean>(value, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	//-----------------------------------------------------------------------------------
-	@DeleteMapping(value = "/deletePost/{postId}")						// 3. WORKING
+	@DeleteMapping(value = "/deletePost/{postId}")						    // 3. WORKING
 	public ResponseEntity<Boolean> deleteVisitorPost(@PathVariable String postId) {
 		Boolean value = postService.deletePost(postId);
 		if (value) {
@@ -48,17 +51,17 @@ public class PostController 												// PORT: 8092
 		return new ResponseEntity<Boolean>(value, HttpStatus.INTERNAL_SERVER_ERROR);
 	}	
 	//-----------------------------------------------------------------------------------
-	@GetMapping(value = "/getPostById/{postId}")							// 3. WORKING
+	@GetMapping(value = "/getPostById/{postId}")							// 4. WORKING
 	public ResponseEntity<VisitorPostDto> getVisitorByPostId(@PathVariable String postId) {
 		return new ResponseEntity<VisitorPostDto>(postService.getPostById(postId), HttpStatus.OK);
 	}	
 	//-----------------------------------------------------------------------------------
-	@GetMapping(value = "/getAllPosts", produces = "application/json")		// 4. WORKING
+	@GetMapping(value = "/getAllPosts", produces = "application/json")		// 5. WORKING
 	public ResponseEntity<List<VisitorPostDto>> getAllVisitorPosts() {
 		return new ResponseEntity<List<VisitorPostDto>>(postService.getAllPosts(), HttpStatus.OK);
 	}
 	//-----------------------------------------------------------------------------------
-	@GetMapping(value = "/getDiscussionList")								// 5. WORKING
+	@GetMapping(value = "/getDiscussionList")								// 6. WORKING
 	public ResponseEntity<Map<String, String>> getAllDiscussions() {
 		HashMap<String, String> discussion = new HashMap<String, String>();
 		try	{
@@ -77,4 +80,31 @@ public class PostController 												// PORT: 8092
 		}		
 		return new ResponseEntity<Map<String, String>>(discussion, HttpStatus.OK);
 	}	
+
+	//------------------------------------------------------------------------------------------
+	// SEARCH OPERATIONS
+	//------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/post/{postId}")						    			// SEARCH 1. WORKING
+	public ResponseEntity<VisitorPostDto> getVisitorPostByPostId(@PathVariable String postId) {
+		return new ResponseEntity<VisitorPostDto>(postService.getPostById(postId), HttpStatus.OK);
+	}
+//	@GetMapping("/visitorPosts")
+//	public ResponseEntity<List<VisitorPosts>> searchForVisitorPosts(@SearchSpec Specification<VisitorPosts, postId> specs) {
+//		return new ResponseEntity<List<VisitorPosts>>(postService.findAll(Specification.where(specs)), HttpStatus.OK);
+//	}	
+	//------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/category/{category}")									// SEARCH 2. WORKING
+	public ResponseEntity<List<VisitorPostDto>> getVisitorPostByCategory(@PathVariable String category) {
+		return new ResponseEntity<List<VisitorPostDto>>(postService.searchByCategory(category), HttpStatus.OK);
+	}
+	//------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/title/{title}")										// SEARCH 3. WORKING
+	public ResponseEntity<List<VisitorPostDto>> getVisitorPostByTitle(@PathVariable String title) {
+		return new ResponseEntity<List<VisitorPostDto>>(postService.searchByTitle(title), HttpStatus.OK);
+	}
+	//------------------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/tag/{tag}")											// SEARCH 4. WORKING
+	public ResponseEntity<List<VisitorPostDto>> getVisitorPostByTag(@PathVariable String tag) {
+		return new ResponseEntity<List<VisitorPostDto>>(postService.searchByTag(tag), HttpStatus.OK);
+	}
 }

@@ -97,8 +97,12 @@ public class TestVisitorCommentController {
 	//------ Test 4 ------------------------------------------------------------------------------
 	@Test
 	public  void testVisitorCommentById() throws Exception{
+
+		List<VisitorCommentDto> list = new ArrayList<VisitorCommentDto>();
 		
-		when(commentServiceImpl.getVisitorCommentById("1")).thenReturn(MasterData.getVisitorCommentDetails());
+		list.add(MasterData.getVisitorCommentDetails());
+		
+		when(commentServiceImpl.getVisitorCommentById("1")).thenReturn(list);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.put("/getCommentByPostId/1")
 				.content(MasterData.asJsonString(MasterData.getVisitorCommentDetails()))

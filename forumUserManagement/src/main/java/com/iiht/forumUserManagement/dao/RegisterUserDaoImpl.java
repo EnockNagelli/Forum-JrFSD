@@ -39,7 +39,6 @@ public class RegisterUserDaoImpl implements RegisterUserDao {
 		return true;
 	};
 	//-----------------------------------------------------------------------------------------------
-	//@SuppressWarnings("unchecked")
 	public Boolean resetPassword(RegisterUserDto registerUserDto) {
 		// Query query = new Query();
 		// query.addCriteria(Criteria.where("id").is(registerUserDto.getId()));

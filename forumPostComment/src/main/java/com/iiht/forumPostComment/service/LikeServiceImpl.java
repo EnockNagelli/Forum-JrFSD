@@ -22,11 +22,11 @@ public class LikeServiceImpl implements LikeService {
 		return visitorLikeDao.deleteLikeById(likeId);
 	};
 	//---------------------------------------------------------------------------------------
-	public VisitorLikeDto getVisitorLikeByPostId(String postId){
+	public List<VisitorLikeDto> getVisitorLikeByPostId(String postId){
 		return visitorLikeDao.getVisitorLikeByPostId(postId);
 	}
 	//---------------------------------------------------------------------------------------
-	public VisitorLikeDto getVisitorLikeByCommentId(String commentId){
+	public List<VisitorLikeDto> getVisitorLikeByCommentId(String commentId){
 		return visitorLikeDao.getVisitorLikeByCommentId(commentId);
 	}
 	//---------------------------------------------------------------------------------------

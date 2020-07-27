@@ -7,7 +7,7 @@ import com.iiht.forumPostComment.dto.VisitorLikeDto;
 public interface LikeService {
 	public Boolean saveUpdate(VisitorLikeDto likeInput);
 	public Boolean deleteLike(String likeId);
-	public VisitorLikeDto getVisitorLikeByPostId(String postId);
-	public VisitorLikeDto getVisitorLikeByCommentId(String commentId);
+	public List<VisitorLikeDto> getVisitorLikeByPostId(String postId);
+	public List<VisitorLikeDto> getVisitorLikeByCommentId(String commentId);
 	public List<VisitorLikeDto> getAllLikes();
 }

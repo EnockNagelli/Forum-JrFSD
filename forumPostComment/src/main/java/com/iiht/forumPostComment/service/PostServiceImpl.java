@@ -13,6 +13,9 @@ public class PostServiceImpl implements PostService
 {
 	@Autowired
 	private VisitorPostDao visitorPostDao;
+
+	//--------------------------------------------------------------------------------
+	// SERVICE OPERATIONS
 	//--------------------------------------------------------------------------------
 	public Boolean saveUpdate(VisitorPostDto postInput) {
 		return visitorPostDao.saveUpdate(postInput);
@@ -29,4 +32,23 @@ public class PostServiceImpl implements PostService
 	public List<VisitorPostDto> getAllPosts() {
 		return visitorPostDao.getAllPosts();
 	}
+	
+	//----------------------------------------------------------------
+	// SEARCH OPERATIONS
+	//----------------------------------------------------------------
+	//public List<VisitorPostDto> searchByPostId(String postId) {
+	//	return visitorPostDao.getPostById(postId);
+	//};
+	//--------------------------------------------------------------------------------
+	public List<VisitorPostDto> searchByCategory(String category) {
+		return visitorPostDao.getAllPostsByCategory(category);
+	};
+	//--------------------------------------------------------------------------------
+	public List<VisitorPostDto> searchByTitle(String title) {
+		return visitorPostDao.getAllPostsByTitle(title);
+	};
+	//--------------------------------------------------------------------------------
+	public List<VisitorPostDto> searchByTag(String tag) {
+		return visitorPostDao.getAllPostsByTag(tag);
+	};	
 }

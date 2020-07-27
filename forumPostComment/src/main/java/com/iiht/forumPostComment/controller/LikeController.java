@@ -40,17 +40,30 @@ public class LikeController													// PORT: 8092
 	}	
 	//-----------------------------------------------------------------------------------
 	@GetMapping(value = "/getLikeByPostId/{postId}")						// 3. WORKING
-	public ResponseEntity<VisitorLikeDto> getVisitorLikeByPostId(@PathVariable String postId) {
-		return new ResponseEntity<VisitorLikeDto>(likeService.getVisitorLikeByPostId(postId), HttpStatus.OK);
+	public ResponseEntity<List<VisitorLikeDto>> getVisitorLikeByPostId(@PathVariable String postId) {
+		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getVisitorLikeByPostId(postId), HttpStatus.OK);
 	}
 	//-----------------------------------------------------------------------------------
 	@GetMapping(value = "/getLikeByCommentId/{commentId}")					// 4. WORKING
-	public ResponseEntity<VisitorLikeDto> getVisitorLikeByCommentId(@PathVariable String commentId) {
-		return new ResponseEntity<VisitorLikeDto>(likeService.getVisitorLikeByCommentId(commentId), HttpStatus.OK);
+	public ResponseEntity<List<VisitorLikeDto>> getVisitorLikeByCommentId(@PathVariable String commentId) {
+		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getVisitorLikeByCommentId(commentId), HttpStatus.OK);
 	}
 	//-----------------------------------------------------------------------------------
 	@GetMapping(value = "/getAllLikes", produces = "application/json")		// 5. WORKING
 	public ResponseEntity<List<VisitorLikeDto>> getAllVisitorLikes() {
 		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getAllLikes(), HttpStatus.OK);
-	}	
+	}
+
+	//------------------------------------------------------------------------------------------
+	// SEARCH OPERATIONS
+	//------------------------------------------------------------------------------------------
+	@GetMapping(value = "/search/like/{postId}")						    // SEARCH 1. WORKING
+	public ResponseEntity<List<VisitorLikeDto>> searchLikeByPostId(@PathVariable String postId) {
+		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getVisitorLikeByPostId(postId), HttpStatus.OK);
+	}
+	//------------------------------------------------------------------------------------------
+//	@GetMapping(value = "/search/like/{commentId}")						    // SEARCH 2. won't WORK
+//	public ResponseEntity<List<VisitorLikeDto>> searchLikeByCommentId(@PathVariable String commentId) {
+//		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getVisitorLikeByCommentId(commentId), HttpStatus.OK);
+//	}	
 }

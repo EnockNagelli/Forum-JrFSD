@@ -38,22 +38,24 @@ public class VisitorLikeDaoImpl implements VisitorLikeDao
 		return true;
 	};
 	//--------------------------------------------------------------------------------------
-	public VisitorLikeDto getVisitorLikeByPostId(String postId)
+	public List<VisitorLikeDto> getVisitorLikeByPostId(String postId)
 	{
-		VisitorLikes likes = likeRepository.findVisitorLikeByPostId(postId);
+		List<VisitorLikes> likes = likeRepository.findVisitorLikeByPostId(postId);
 		
-		VisitorLikeDto visitorLikeDto = getVisitorLikeDto(likes);
-
-		return visitorLikeDto;
+		if(CollectionUtils.isEmpty(likes))
+			return null;
+		else
+			return likes.stream().map(this::getVisitorLikeDto).collect(Collectors.toList());
 	}
 	//--------------------------------------------------------------------------------------
-	public VisitorLikeDto getVisitorLikeByCommentId(String commentId)
+	public List<VisitorLikeDto> getVisitorLikeByCommentId(String commentId)
 	{
-		VisitorLikes likes = likeRepository.findVisitorLikeByCommentId(commentId);
+		List<VisitorLikes> likes = likeRepository.findVisitorLikeByCommentId(commentId);
 		
-		VisitorLikeDto visitorLikeDto = getVisitorLikeDto(likes);
-
-		return visitorLikeDto;
+		if(CollectionUtils.isEmpty(likes))
+			return null;
+		else
+			return likes.stream().map(this::getVisitorLikeDto).collect(Collectors.toList());
 	}	
 	//--------------------------------------------------------------------------------------
 	public List<VisitorLikeDto> getAllVisitorLikes() {
@@ -71,23 +73,3 @@ public class VisitorLikeDaoImpl implements VisitorLikeDao
 		return new VisitorLikeDto(likes.getId(), likes.getPostId(), likes.getCommentId(), likes.getLikeInfo());
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//@Autowired
-//private ModelMapper modelMapper;
-//likeRepository.save(modelMapper.map(likeInput, VisitorLikes.class));
