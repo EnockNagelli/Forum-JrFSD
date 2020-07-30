@@ -24,12 +24,14 @@ public class RegisterUserDaoImpl implements RegisterUserDao {
 	public Boolean addUser(RegisterUserDto registerUserDto) {
 		RegisterUser newUser = new RegisterUser(); 
 		newUser.setId(registerUserDto.getId());
+		newUser.setRole(registerUserDto.getRole());
 		newUser.setFirstName(registerUserDto.getFirstName());
 		newUser.setLastName(registerUserDto.getLastName());
 		newUser.setLoginName(registerUserDto.getLoginName());
 		newUser.setPassword(registerUserDto.getPassword());
 		newUser.setEmail(registerUserDto.getEmail());
 		newUser.setMobileNo(registerUserDto.getMobileNo());
+		newUser.setInUse(registerUserDto.getInUse());
 		userRepository.insert(newUser);
 		return true;
 	};
@@ -68,7 +70,18 @@ public class RegisterUserDaoImpl implements RegisterUserDao {
 		return registerUserDto;
 	};
 	//-----------------------------------------------------------------------------------------------
+	public List<RegisterUserDto> getAllByRoles(String role){
+		
+		List<RegisterUser> posts = userRepository.findByRole(role);
+
+		if(CollectionUtils.isEmpty(posts))
+			return null;
+		else
+			return posts.stream().map(this::getRegisterUserDto).collect(Collectors.toList());		
+	};
+	//-----------------------------------------------------------------------------------------------
 	public List<RegisterUserDto> getAllUsers() {
+		
 		List<RegisterUser> posts = userRepository.findAll();
 
 		if(CollectionUtils.isEmpty(posts))
@@ -78,6 +91,6 @@ public class RegisterUserDaoImpl implements RegisterUserDao {
 	};
 	//-----------------------------------------------------------------------------------------------
 	public RegisterUserDto getRegisterUserDto(RegisterUser registerUser) {
-		return new RegisterUserDto(registerUser.getId(), registerUser.getFirstName(), registerUser.getLastName(), registerUser.getLoginName(), registerUser.getPassword(), registerUser.getEmail(), registerUser.getMobileNo(),	registerUser.getInUse());
+		return new RegisterUserDto(registerUser.getId(), registerUser.getRole(), registerUser.getFirstName(), registerUser.getLastName(), registerUser.getLoginName(), registerUser.getPassword(), registerUser.getEmail(), registerUser.getMobileNo(),	registerUser.getInUse());
 	};
 }

@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 public class RegisterUser {
 	@Id
 	private String id;
+	private String role;
 	private String firstName;
 	private String lastName;
 	private String loginName;
