@@ -16,6 +16,14 @@ public class VisitorPostDto
 
 	@NotNull
 	@Length(min = 1, max = 100)
+	private String userId;
+	
+	@NotNull
+	@Length(min = 1, max = 100)
+	private String loginName;
+	
+	@NotNull
+	@Length(min = 1, max = 100)
 	private String category;
 
 	@NotNull

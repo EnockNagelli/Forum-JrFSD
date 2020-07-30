@@ -17,16 +17,21 @@ public class VisitorCommentDaoImpl implements VisitorCommentDao
 	@Autowired
 	private CommentRepository repository; 
 	//-------------------------------------------------------------------------------------
-	public Boolean saveUpdate(VisitorCommentDto commentInput) {
+	public Boolean saveUpdate(VisitorCommentDto visitorComment, String userId, String loginName, String postId, String category) {
 		
-		VisitorComments visitorComments = new VisitorComments();
+		VisitorComments newComments = new VisitorComments();
 		
-		visitorComments.setId(commentInput.getId());
-		visitorComments.setPostId(commentInput.getPostId());
-		visitorComments.setTags(commentInput.getTags());
-		visitorComments.setCommentInfo(commentInput.getCommentInfo());
+		newComments.setId(visitorComment.getId());
+		//------------------------------------------------------------------
+		newComments.setUserId(userId);
+		newComments.setLoginName(loginName);
+		newComments.setPostId(postId);
+		newComments.setCategory(category);
+		//------------------------------------------------------------------
+		newComments.setTags(visitorComment.getTags());
+		newComments.setCommentInfo(visitorComment.getCommentInfo());
 		
-		repository.save(visitorComments);
+		repository.save(newComments);
 		return Boolean.TRUE;
 	}
 	//-------------------------------------------------------------------------------------
@@ -34,6 +39,11 @@ public class VisitorCommentDaoImpl implements VisitorCommentDao
 		repository.deleteById(commentId);
 		return true;
 	};
+	//-------------------------------------------------------------------------------------
+	public VisitorCommentDto getCommentByUserPostId(String userId, String postId) {
+		VisitorComments comments = repository.findByUserIdAndPostId(userId, postId);
+		return getVisitorCommentDto(comments);
+	}
 	//-------------------------------------------------------------------------------------
 	public List<VisitorCommentDto> getVisitorCommentById(String postId) {
 		
@@ -57,6 +67,6 @@ public class VisitorCommentDaoImpl implements VisitorCommentDao
 	};
 	//----------------------------------------------------------------------------------------------
 	public VisitorCommentDto getVisitorCommentDto(VisitorComments comments)	{
-		return new VisitorCommentDto(comments.getId(), comments.getPostId(), comments.getTags(), comments.getCommentInfo());
+		return new VisitorCommentDto(comments.getId(), comments.getUserId(), comments.getLoginName(), comments.getPostId(), comments.getCategory(),	comments.getTags(), comments.getCommentInfo());
 	};	
 }

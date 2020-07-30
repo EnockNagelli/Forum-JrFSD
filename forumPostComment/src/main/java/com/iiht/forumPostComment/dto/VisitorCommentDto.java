@@ -15,8 +15,22 @@ public class VisitorCommentDto
 {
 	private String id;
 
+	@NotNull
+	@Length(min = 1, max = 100)
+	private String userId;
+
+	@NotNull
+	@Length(min = 1, max = 100)
+	private String loginName;
+
+	@NotNull
+	@Length(min = 1, max = 100)
 	private String postId;
 
+	@NotNull
+	@Length(min = 1, max = 100)
+	private String category;
+	
 	@NotNull
 	@Length(min = 1, max = 100)
 	private String tags;

@@ -11,7 +11,10 @@ public class MasterData {
 
 		VisitorPostDto post = new VisitorPostDto();
 		
+		
 		post.setId("1");
+		post.setUserId("user1");
+		post.setLoginName("loginName");
 		post.setCategory("Category");
 		post.setTitle("Title");
 		post.setTags("Tag");

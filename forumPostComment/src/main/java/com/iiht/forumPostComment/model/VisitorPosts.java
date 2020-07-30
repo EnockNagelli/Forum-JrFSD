@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 public class VisitorPosts {
 	@Id
 	private String id;
+	private String userId;
+	private String loginName;
 	private String category;
 	private String title;
 	private String tags;

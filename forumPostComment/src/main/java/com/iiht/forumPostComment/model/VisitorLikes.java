@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 public class VisitorLikes {
 	@Id
 	private String id;
+	private String userId;
+	private String loginName;
 	private String postId;
 	private String commentId;
 	private String likeInfo;

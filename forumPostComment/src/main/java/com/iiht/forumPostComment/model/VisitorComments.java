@@ -15,7 +15,10 @@ import lombok.NoArgsConstructor;
 public class VisitorComments {
 	@Id
 	private String id;
+	private String userId;
+	private String loginName;
 	private String postId;
+	private String category;
 	private String tags;
 	private String commentInfo;
 }

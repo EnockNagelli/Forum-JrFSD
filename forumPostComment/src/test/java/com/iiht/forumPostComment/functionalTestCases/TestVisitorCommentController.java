@@ -45,8 +45,13 @@ public class TestVisitorCommentController {
 	//------ Test 1 ------------------------------------------------------------------------------
 	@Test
 	public void testAddComment() throws Exception {
-		
-		when(commentServiceImpl.saveUpdate(MasterData.getVisitorCommentDetails())).thenReturn(true);
+
+		String userId = "user1";
+		String postId = "post1";
+		String loginName = "loginName";
+		String category = "category";
+
+		when(commentServiceImpl.saveUpdate(MasterData.getVisitorCommentDetails(), userId, postId, loginName, category)).thenReturn(true);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/postComment")
 				.content(MasterData.asJsonString(MasterData.getVisitorCommentDetails()))

@@ -14,8 +14,8 @@ public class LikeServiceImpl implements LikeService {
 	@Autowired
 	private VisitorLikeDao visitorLikeDao;
 	//---------------------------------------------------------------------------------------
-	public Boolean saveUpdate(VisitorLikeDto likeInput) {
-		return visitorLikeDao.saveUpdate(likeInput);
+	public Boolean saveUpdate(VisitorLikeDto visitorLike, String userId, String loginName, String postId, String commentId) {
+		return visitorLikeDao.saveUpdate(visitorLike, userId, loginName, postId, commentId);
 	}
 	//---------------------------------------------------------------------------------------
 	public Boolean deleteLike(String likeId) {

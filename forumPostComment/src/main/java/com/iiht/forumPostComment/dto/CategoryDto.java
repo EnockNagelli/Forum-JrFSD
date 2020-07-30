@@ -1,5 +1,6 @@
 package com.iiht.forumPostComment.dto;
 
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -11,23 +12,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class VisitorLikeDto 
-{
+public class CategoryDto {
+	@Id
 	private String id;
 
 	@NotNull
 	@Length(min = 1, max = 100)
-	private String userId;
+	private String adminName;
 
 	@NotNull
 	@Length(min = 1, max = 100)
-	private String loginName;
-
-	private String postId;
-
-	private String commentId;
-
-	@NotNull
-	@Length(min = 1, max = 100)
-	private String likeInfo;
+	private String category;
 }

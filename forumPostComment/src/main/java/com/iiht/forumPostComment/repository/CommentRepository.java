@@ -10,5 +10,7 @@ import com.iiht.forumPostComment.model.VisitorComments;
 @Repository
 public interface CommentRepository extends MongoRepository<VisitorComments, String>
 {
-	List<VisitorComments> findCommentByPostId(String postId);
+	public VisitorComments findByUserIdAndPostId(String userId, String postId);
+	
+	public List<VisitorComments> findCommentByPostId(String postId);
 }

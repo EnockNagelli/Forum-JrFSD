@@ -14,12 +14,17 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	private VisitorCommentDao visitorCommentDao;
 	//----------------------------------------------------------------------------------
-	public Boolean saveUpdate(VisitorCommentDto commentInput) {
-		return visitorCommentDao.saveUpdate(commentInput);
+	
+	public Boolean saveUpdate(VisitorCommentDto visitorComment, String userId, String loginName, String postId, String category) {
+		return visitorCommentDao.saveUpdate(visitorComment, userId, loginName, postId, category);
 	}
 	//----------------------------------------------------------------------------------
 	public Boolean deleteComment(String commentId) {
 		return visitorCommentDao.deleteVisitorComment(commentId);
+	};
+	//----------------------------------------------------------------------------------
+	public VisitorCommentDto getCommentByUserPostId(String userId, String postId) {
+		return visitorCommentDao.getCommentByUserPostId(userId, postId);
 	};
 	//----------------------------------------------------------------------------------
 	public List<VisitorCommentDto> getVisitorCommentById(String postId) {

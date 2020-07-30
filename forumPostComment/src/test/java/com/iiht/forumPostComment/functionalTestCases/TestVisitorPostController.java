@@ -44,8 +44,12 @@ public class TestVisitorPostController {
 	//------ Test 1 ------------------------------------------------------------------------------
 	@Test
 	public void testAddVisitorPost() throws Exception {
+
+		String userId = "user1";
+		String loginName = "loginName";
+		String category = "category";
 		
-		when(postServiceImpl.saveUpdate(MasterData.getVisitorPostDetails())).thenReturn(true);
+		when(postServiceImpl.saveUpdate(MasterData.getVisitorPostDetails(), userId, loginName, category)).thenReturn(true);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/savePost")
 				.content(MasterData.asJsonString(MasterData.getVisitorPostDetails()))

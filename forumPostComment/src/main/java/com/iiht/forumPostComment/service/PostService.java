@@ -9,7 +9,7 @@ public interface PostService {
 	//----------------------------------------------------------------
 	// SERVICE OPERATIONS
 	//----------------------------------------------------------------
-	public Boolean saveUpdate(VisitorPostDto postInput); 
+	public Boolean saveUpdate(VisitorPostDto postInput, String userId, String loginName, String category);
 	public Boolean deletePost(String postId);
 	public List<VisitorPostDto> getAllPosts();
 

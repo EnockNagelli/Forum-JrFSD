@@ -20,16 +20,21 @@ public class VisitorLikeDaoImpl implements VisitorLikeDao
 	@Autowired
 	private LikeRepository likeRepository; 
 	//--------------------------------------------------------------------------------------
-	public Boolean saveUpdate(VisitorLikeDto likeInput) {
+	public Boolean saveUpdate(VisitorLikeDto visitorLike, String userId, String loginName, String postId, String commentId) {
 
-		VisitorLikes visitorLikes = new VisitorLikes();
+		VisitorLikes newLikes = new VisitorLikes();
 		
-		visitorLikes.setId(likeInput.getId());
-		visitorLikes.setPostId(likeInput.getPostId());
-		visitorLikes.setCommentId(likeInput.getCommentId());
-		visitorLikes.setLikeInfo(likeInput.getLikeInfo());
+		newLikes.setId(visitorLike.getId());
+		//-------------------------------------------------------------
+		newLikes.setUserId(userId);
+		newLikes.setLoginName(loginName);
+		newLikes.setPostId(postId);
+		newLikes.setCommentId(commentId);
+		//-------------------------------------------------------------
+		newLikes.setLikeInfo(visitorLike.getLikeInfo());
 		
-		likeRepository.save(visitorLikes);
+		likeRepository.save(newLikes);
+
 		return Boolean.TRUE;
 	}
 	//--------------------------------------------------------------------------------------
@@ -70,6 +75,6 @@ public class VisitorLikeDaoImpl implements VisitorLikeDao
 
 	//-------------------------------------------------------------------------------------------
 	public VisitorLikeDto getVisitorLikeDto(VisitorLikes likes) {
-		return new VisitorLikeDto(likes.getId(), likes.getPostId(), likes.getCommentId(), likes.getLikeInfo());
+		return new VisitorLikeDto(likes.getId(), likes.getUserId(), likes.getLoginName(), likes.getPostId(), likes.getCommentId(), likes.getLikeInfo());
 	}
 }

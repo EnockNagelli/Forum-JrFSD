@@ -46,7 +46,13 @@ public class TestVisitorLikeController {
 	@Test
 	public void testAddLike() throws Exception {
 		
-		when(likeServiceImpl.saveUpdate(MasterData.getVisitorLikeDetails())).thenReturn(true);
+		String userId = "user1";
+		String loginName = "loginName";
+
+		String postId = "post1";
+		String commentId = "comment2";
+		
+		when(likeServiceImpl.saveUpdate(MasterData.getVisitorLikeDetails(), userId, loginName, postId, commentId)).thenReturn(true);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/postLike")
 				.content(MasterData.asJsonString(MasterData.getVisitorLikeDetails()))

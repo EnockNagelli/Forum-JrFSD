@@ -17,8 +17,8 @@ public class PostServiceImpl implements PostService
 	//--------------------------------------------------------------------------------
 	// SERVICE OPERATIONS
 	//--------------------------------------------------------------------------------
-	public Boolean saveUpdate(VisitorPostDto postInput) {
-		return visitorPostDao.saveUpdate(postInput);
+	public Boolean saveUpdate(VisitorPostDto postInput, String userId, String loginName, String category) {
+		return visitorPostDao.saveUpdate(postInput, userId, loginName, category);
 	}
 	//--------------------------------------------------------------------------------
 	public Boolean deletePost(String postId) {

@@ -20,12 +20,16 @@ public class VisitorPostDaoImpl implements VisitorPostDao
 	@Autowired
 	private PostRepository repository; 
 	//--------------------------------------------------------------------------------
-	public Boolean saveUpdate(VisitorPostDto postInput) {
+	public Boolean saveUpdate(VisitorPostDto postInput, String userId, String loginName, String category) { 
 		
 		VisitorPosts visitorPosts = new VisitorPosts();
 		
 		visitorPosts.setId(postInput.getId());
-		visitorPosts.setCategory(postInput.getCategory());
+
+		visitorPosts.setUserId(userId);
+		visitorPosts.setLoginName(loginName);
+		visitorPosts.setCategory(category);
+
 		visitorPosts.setTitle(postInput.getTitle());
 		visitorPosts.setTags(postInput.getTags());
 		visitorPosts.setPostInfo(postInput.getPostInfo());
@@ -96,10 +100,10 @@ public class VisitorPostDaoImpl implements VisitorPostDao
 	// Conversion Support Operations
 	//--------------------------------------------------------------------------------
 	public VisitorPostDto getVisitorPost(VisitorPosts posts) {
-		return new VisitorPostDto(posts.getId(), posts.getCategory(), posts.getTitle(), posts.getTags(), posts.getPostInfo());
+		return new VisitorPostDto(posts.getId(), posts.getUserId(), posts.getLoginName(), posts.getCategory(), posts.getTitle(), posts.getTags(), posts.getPostInfo());
 	}
 	//--------------------------------------------------------------------------------
 	public VisitorPostDto getVisitorPostDto(VisitorPosts posts) {
-		return new VisitorPostDto(posts.getId(), posts.getCategory(), posts.getTitle(), posts.getTags(), posts.getPostInfo());
+		return new VisitorPostDto(posts.getId(), posts.getUserId(), posts.getLoginName(), posts.getCategory(), posts.getTitle(), posts.getTags(), posts.getPostInfo());
 	}
 }

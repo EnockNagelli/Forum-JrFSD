@@ -56,7 +56,12 @@ public class ExceptionTest {
 		VisitorPostDto visitorPost = MasterData.getVisitorPostDetails();
 		visitorPost.setCategory("ct");
 		visitorPost.setTags("tg");
-		when(postServiceImpl.saveUpdate(MasterData.getVisitorPostDetails())).thenReturn(true);
+		
+		String userId = "user1";
+		String loginName = "loginName";
+		String category = "category";
+		
+		when(postServiceImpl.saveUpdate(MasterData.getVisitorPostDetails(), userId, loginName, category)).thenReturn(true);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/savePost")
 				.content(MasterData.asJsonString(MasterData.getVisitorPostDetails()))
@@ -86,9 +91,17 @@ public class ExceptionTest {
 	public void testAddCommentException() throws Exception {
 
 		VisitorCommentDto visitorComment = MasterData.getVisitorCommentDetails();
-		visitorComment.setPostId("1");
-		visitorComment.setTags("tg");
-		when(commentServiceImpl.saveUpdate(MasterData.getVisitorCommentDetails())).thenReturn(true);
+		visitorComment.setUserId("user1");
+		visitorComment.setLoginName("loginName");
+		visitorComment.setPostId("post1");
+		visitorComment.setCategory("category");
+
+		String userId = "user1";
+		String postId = "post1";
+		String loginName = "loginName";
+		String category = "category";
+		
+		when(commentServiceImpl.saveUpdate(MasterData.getVisitorCommentDetails(), userId, loginName, postId, category)).thenReturn(true);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/postComment")
 				.content(MasterData.asJsonString(MasterData.getVisitorCommentDetails()))
@@ -120,7 +133,14 @@ public class ExceptionTest {
 		VisitorLikeDto visitorLike = MasterData.getVisitorLikeDetails();
 		visitorLike.setPostId("1");
 		visitorLike.setCommentId("1");
-		when(likeServiceImpl.saveUpdate(MasterData.getVisitorLikeDetails())).thenReturn(true);
+
+		String userId = "user1";
+		String loginName = "loginName";
+
+		String postId = "post1";
+		String commentId = "comment2";
+		
+		when(likeServiceImpl.saveUpdate(MasterData.getVisitorLikeDetails(), userId, loginName, postId, commentId)).thenReturn(true);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/postLike")
 				.content(MasterData.asJsonString(MasterData.getVisitorLikeDetails()))
