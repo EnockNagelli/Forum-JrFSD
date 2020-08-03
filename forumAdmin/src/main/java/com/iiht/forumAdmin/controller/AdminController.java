@@ -13,23 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.web.client.RestTemplate;
 
 import com.iiht.forumAdmin.dto.CategoryDto;
 import com.iiht.forumAdmin.service.CategoryService;
-//import com.netflix.discovery.EurekaClient;
 
 @RestController
 public class AdminController
 {
 	@Autowired
 	private CategoryService categoryService;
-	
-//	@Autowired
-//	private RestTemplate restTemplate;
-
-//	@Autowired
-//  private EurekaClient eurekaClient;
 	
 	//---------------------------------------------------------------------------------------------------
 	// SERVICE OPERATIONS
@@ -71,12 +63,4 @@ public class AdminController
 	public ResponseEntity<List<CategoryDto>> getAllCategories() {
 		return new ResponseEntity<List<CategoryDto>>(categoryService.getAllCategories(), HttpStatus.OK);
 	}
-	
-	//---------------------------------------------------------------------------------------------------
-	// SEARCH OPERATIONS
-	//---------------------------------------------------------------------------------------------------
-//	@GetMapping(value = "/search/category/{categoryId}", produces = "application/json")		// 1. WORKING
-//	public ResponseEntity<CategoryDto> searchCategoryById(@PathVariable String categoryId) {
-//		return new ResponseEntity<CategoryDto>(categoryService.getCategoryById(categoryId), HttpStatus.OK);
-//	}
 }
