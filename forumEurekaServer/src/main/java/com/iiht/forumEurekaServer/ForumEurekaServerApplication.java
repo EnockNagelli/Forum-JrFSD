@@ -10,5 +10,5 @@ public class ForumEurekaServerApplication {												// PORT: 8761
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForumEurekaServerApplication.class, args);
-	}
+	}	
 }
