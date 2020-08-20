@@ -82,9 +82,4 @@ public class LikeController																	// PORT: 8092
 	public ResponseEntity<List<VisitorLikeDto>> searchLikeByPostId(@PathVariable String postId) {
 		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getVisitorLikeByPostId(postId), HttpStatus.OK);
 	}
-	//---------------------------------------------------------------------------------------------------
-//	@GetMapping(value = "/search/like/{commentId}")						    	  // SEARCH 2. won't WORK
-//	public ResponseEntity<List<VisitorLikeDto>> searchLikeByCommentId(@PathVariable String commentId) {
-//		return new ResponseEntity<List<VisitorLikeDto>>(likeService.getVisitorLikeByCommentId(commentId), HttpStatus.OK);
-//	}	
 }
