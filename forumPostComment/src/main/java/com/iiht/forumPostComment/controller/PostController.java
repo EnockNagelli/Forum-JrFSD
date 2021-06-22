@@ -26,7 +26,7 @@ import com.iiht.forumPostComment.service.PostService;
 
 @RefreshScope
 @RestController
-public class PostController 																// PORT: 8092
+public class PostController 														// PORT: 8092
 {	
 	@Autowired
 	private PostService postService;

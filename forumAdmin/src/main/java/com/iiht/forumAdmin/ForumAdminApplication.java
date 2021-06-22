@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
 @SpringBootApplication(scanBasePackages = { "com.iiht.forumAdmin" })
-public class ForumAdminApplication { 												// PORT: 8091
+public class ForumAdminApplication { 													// PORT: 8091
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForumAdminApplication.class, args);
@@ -58,3 +58,17 @@ public class ForumAdminApplication { 												// PORT: 8091
 	 * CorsFilter(source); }
 	 */
 }
+
+/*
+Service Discovery is one of the key tenets of a microservice-based architecture. 
+Eureka is the Netflix Service Discovery Server and Client. 
+The server can be configured and deployed to be highly available, with each server replicating 
+state about the registered services to the others.
+
+How to Include Eureka Client
+To include the Eureka Client in your project, use the starter with a 
+	group ID of 	'org.springframework.cloud' and an 
+	artifact ID of 	'spring-cloud-starter-netflix-eureka-client'.
+
+
+*/

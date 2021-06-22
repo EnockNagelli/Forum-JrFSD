@@ -12,7 +12,7 @@ import org.springframework.web.filter.CorsFilter;
 @EnableZuulProxy
 @EnableDiscoveryClient
 @SpringBootApplication
-public class ForumZuulProxyApplication {												// PORT: 8777
+public class ForumZuulProxyApplication {													// PORT: 8777
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForumZuulProxyApplication.class, args);
